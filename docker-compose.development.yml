@@ -2,6 +2,7 @@ version: "3.7"
 
 services:
   node:
+    container_name: vite_react_template_base
     tty: true
     stdin_open: true
     image: node:14.16.1-alpine
@@ -9,5 +10,5 @@ services:
     volumes:
       - ./src:/app
     ports:
-      - 8090:3000
-    command: sh -c "npm i && npm start"
+      - "8090:3000"
+    command: sh -c "npm i && npm run dev"
