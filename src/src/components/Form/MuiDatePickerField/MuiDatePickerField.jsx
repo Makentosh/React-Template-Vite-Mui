@@ -2,8 +2,10 @@ import PropTypes from 'prop-types';
 import dayjs from 'dayjs';
 import ruLocale from 'dayjs/locale/ru';
 import { Controller, useFormContext } from 'react-hook-form';
-import { DatePicker, LocalizationProvider } from '@mui/lab';
-import AdapterDateJs from '@mui/lab/AdapterDayjs';
+// import { DatePicker, LocalizationProvider } from '@mui/lab';
+// import AdapterDateJs from '@mui/lab/AdapterDayjs';
+import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { TextField } from '@mui/material';
 import { InsertInvitation } from '@mui/icons-material';
 
@@ -18,8 +20,8 @@ export const MuiDatePickerField = ({ name, rules, label, mask, format }) => {
       defaultValue={null}
       render={({ field: { onChange, ...field }, fieldState: { invalid, error } }) => (
         <LocalizationProvider
-          dateAdapter={AdapterDateJs}
-          locale={ruLocale}
+          dateAdapter={AdapterDayjs}
+          adapterLocale={ruLocale}
         >
           <DatePicker
             {...field}
