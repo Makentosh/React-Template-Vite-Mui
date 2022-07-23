@@ -10,6 +10,7 @@ import { MuiRadioButtonFields } from './MuiRadioButtonFields/MuiRadioButtonField
 import { MuiDatePickerField } from './MuiDatePickerField/MuiDatePickerField';
 import { MuiCheckboxField } from './MuiCheckboxField/MuiCheckboxField';
 import { MuiAutocompleteField } from './MuiAutocompleteField/MuiAutocompleteField';
+import { FormWrapper } from './FormWrapper/FormWrapper';
 
 export {
   FormContainer,
@@ -24,4 +25,5 @@ export {
   MuiDatePickerField,
   MuiCheckboxField,
   MuiAutocompleteField,
+  FormWrapper,
 };

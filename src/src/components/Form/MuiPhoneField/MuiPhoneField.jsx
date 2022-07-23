@@ -27,6 +27,7 @@ export const MuiPhoneField = ({ rules, name, label, ...props }) => {
           {(inputProps) => (
             <TextField
               {...inputProps}
+              size={'small'}
               variant='outlined'
               fullWidth
               label={label}

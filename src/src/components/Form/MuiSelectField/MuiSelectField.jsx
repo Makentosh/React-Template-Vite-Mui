@@ -20,6 +20,7 @@ export const MuiSelectField = ({ label, options, name, disabled, fullWidth, rule
         rules={rules}
         render={({ field, fieldState: { invalid, error } }) => (
           <FormControl
+            size={'small'}
             variant='outlined'
             fullWidth={fullWidth}
             error={invalid}

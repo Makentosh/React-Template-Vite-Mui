@@ -21,7 +21,8 @@ export const MuiPasswordField = ({ name, label, placeholder, rules, ...props }) 
       render={({ field, fieldState: { invalid, error } }) => {
         return (
           <TextField
-            variant='outlined'
+            size={'small'}
+            variant={'outlined'}
             label={label}
             type={showPassword ? 'text' : 'password'}
             InputProps={{

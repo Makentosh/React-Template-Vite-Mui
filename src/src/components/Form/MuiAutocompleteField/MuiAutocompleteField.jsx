@@ -16,6 +16,7 @@ export const MuiAutocompleteField = ({ name, rules, label, placeholder, options,
           {...props}
           {...field}
           options={options}
+          size={'small'}
           getOptionLabel={(option) => option?.label ?? ''}
           isOptionEqualToValue={(option, value) => option === value}
           noOptionsText={'Ничего не найдено'}

@@ -15,9 +15,10 @@ export const MuiTextField = ({ name, label, placeholder, rows, maxRows, multilin
       render={({ field, fieldState: { invalid, error } }) => {
         return (
           <TextField
+            {...props}
             {...field}
-            variant='outlined'
-            label={label}
+            size={'small'}
+            variant={'outlined'}
             rows={rows}
             multiline={multiline}
             maxRows={maxRows}
@@ -25,12 +26,16 @@ export const MuiTextField = ({ name, label, placeholder, rows, maxRows, multilin
             fullWidth
             error={invalid}
             helperText={error?.message || ''}
-            {...props}
+            label={label}
           />
         );
       }}
     />
   );
+};
+
+MuiTextField.defaultProps = {
+  multiline: false,
 };
 
 MuiTextField.propTypes = {

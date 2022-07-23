@@ -1,8 +1,8 @@
 import { Controller, useFormContext } from 'react-hook-form';
 import { FormControlLabel, FormHelperText, Switch } from '@mui/material';
-import { defaultFieldsProps } from '../../../propTypes';
+import PropTypes from 'prop-types';
 
-export const MuiSwitchField = ({ name, label, labelPlacement = 'end', rules, checkedValue, ...props }) => {
+export const MuiSwitchField = ({ name, label, labelPlacement = 'end', rules, ...props }) => {
   const { control } = useFormContext();
 
   return (
@@ -15,7 +15,7 @@ export const MuiSwitchField = ({ name, label, labelPlacement = 'end', rules, che
         <>
           <FormControlLabel
             labelPlacement={labelPlacement}
-            value={checkedValue}
+            // value={checkedValue}
             control={
               <Switch
                 checked={field.value}
@@ -41,5 +41,8 @@ export const MuiSwitchField = ({ name, label, labelPlacement = 'end', rules, che
 };
 
 MuiSwitchField.propTypes = {
-  ...defaultFieldsProps,
+  name: PropTypes.string,
+  label: PropTypes.string,
+  rules: PropTypes.object,
+  labelPlacement: PropTypes.string,
 };

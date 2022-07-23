@@ -2,18 +2,18 @@ version: '3.7'
 
 services:
   nginx:
-    container_name: cp_partner_admin_front_nginx
+    container_name: ${PROJECT_NGINX_NAME}_nginx
     image: nginx:alpine
     working_dir: /app/build
     volumes:
       - build:/app
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
     ports:
-      - ${REACT_APP_PORT}:80
+      - ${PROJECT_PORT}:80
     command: sh -c "nginx -g 'daemon off;'"
 
   node:
-    container_name: cp_partner_admin_frontfront__node
+    container_name: ${PROJECT_NODE_NAME}__node
     image: node:14.16.1-alpine
     working_dir: /app
     volumes:

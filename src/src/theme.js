@@ -4,22 +4,22 @@ import { red } from '@mui/material/colors';
 const theme = createTheme({
   typography: {
     body2: {
-      color: '#272F4C'
+      color: '#272F4C',
     },
-    "fontFamily": `"Roboto", sans-serif`,
-    "fontSize": 14,
-    "fontWeightLight": 300,
-    "fontWeightRegular": 400,
-    "fontWeightMedium": 500,
-    "fontWeightBold": 700,
-    "color": `#272F4C`
+    fontFamily: `"Roboto", sans-serif`,
+    fontSize: 14,
+    fontWeightLight: 300,
+    fontWeightRegular: 400,
+    fontWeightMedium: 500,
+    fontWeightBold: 700,
+    color: `#272F4C`,
   },
   palette: {
     primary: {
-      main: '#FF9D3A'
+      main: '#FF9D3A',
     },
     secondary: {
-      main: red[500]
+      main: red[500],
     },
   },
   components: {
@@ -39,51 +39,51 @@ const theme = createTheme({
           color: '#ffffff',
 
           '&:hover': {
-            backgroundColor: '#FF9D3A'
-          }
-        }
+            backgroundColor: '#FF9D3A',
+          },
+        },
       },
     },
     MuiInput: {
       styleOverrides: {
         root: {
           fontSize: 14,
-          height: 'auto'
-        }
-      }
+          height: 'auto',
+        },
+      },
     },
     MuiInputBase: {
       styleOverrides: {
         input: {
           height: 'auto',
-          padding: '6px 0',
-        }
-      }
+          // padding: '6px 0',
+        },
+      },
     },
     MuiInputLabel: {
       styleOverrides: {
         root: {
-          fontSize: 14,
+          // fontSize: 14,
         },
         outlined: {
-          transform: 'translate(14px, 15px) scale(1)'
-        }
-      }
+          // transform: 'translate(14px, 15px) scale(1)',
+        },
+      },
     },
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
-          fontSize: 14,
-          background: '#ffffff'
+          // fontSize: 14,
+          background: '#ffffff',
         },
         input: {
-          padding: '14px 14px',
-          height: 'auto',
+          // padding: '14px 14px',
+          // height: 'auto',
         },
         multiline: {
-          padding: '16px 14px',
+          // padding: '16px 14px',
         },
-      }
+      },
     },
     MuiAutocomplete: {
       styleOverrides: {
@@ -91,20 +91,20 @@ const theme = createTheme({
         //   zIndex: 9999,
         // },
         input: {
-          padding: '6px 6px !important'
-        }
-      }
+          // padding: '6px 6px !important',
+        },
+      },
     },
     MuiCardHeader: {
       styleOverrides: {
         title: {
           fontSize: 15,
-          fontWeight: 500
+          fontWeight: 500,
         },
         subheader: {
-          fontSize: 14
-        }
-      }
+          fontSize: 14,
+        },
+      },
     },
     MuiCardContent: {
       styleOverrides: {
@@ -114,11 +114,10 @@ const theme = createTheme({
             paddingBottom: 18,
           },
           '& .MuiTable-root': {
-            margin: '-28px -24px -18px -24px'
+            margin: '-28px -24px -18px -24px',
           },
-
         },
-      }
+      },
     },
     MuiTab: {
       styleOverrides: {
@@ -131,16 +130,16 @@ const theme = createTheme({
           '@media (min-width: 600px)': {
             fontSize: 14,
             minWidth: 0,
-          }
+          },
         },
-      }
+      },
     },
     MuiTableCell: {
       styleOverrides: {
         stickyHeader: {
-          backgroundColor: '#FFFFFF'
-        }
-      }
+          backgroundColor: '#FFFFFF',
+        },
+      },
     },
     MuiPagination: {
       styleOverrides: {
@@ -149,7 +148,7 @@ const theme = createTheme({
           boxShadow: `0 5px 10px 0 rgba(0,0,0,0.10)`,
           borderRadius: `6px`,
         },
-      }
+      },
     },
     MuiPaginationItem: {
       styleOverrides: {
@@ -163,19 +162,19 @@ const theme = createTheme({
         },
         page: {
           '&:hover': {
-            backgroundColor: '#FF9D3A'
+            backgroundColor: '#FF9D3A',
           },
-        }
-      }
+        },
+      },
     },
     MuiFormHelperText: {
       styleOverrides: {
         root: {
           fontSize: 10,
-          color:'#7D9AA5',
+          color: '#7D9AA5',
           marginTop: 11,
-        }
-      }
+        },
+      },
     },
     // MuiPickersToolbar: {
     //   styleOverrides: {
