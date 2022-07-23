@@ -20,23 +20,35 @@ Docker Engine needs to be installed.
 git clone 
 ```
 
-1. Set the variables to .env <br>
+2. Set the variables to .env (if it production build)
 ```
-# cp .env.example .env
-VITE_APP_API_URL=api_url
-VITE_APP_URL=url_to_client_side_version
-VITE_APP_TIMEZONE=Europe/Moscow or other
-VITE_APP_PORT=port_to_production_build
-VITE_APP_LANGUAGE=ru_or_ua
+terminal command - cp .env.example .env
+```
+```
+PROJECT_NGINX_NAME=
+PROJECT_NODE_NAME=
+PROJECT_PORT=
+```
+3. Set the variables to src/.env 
+
+```
+terminal command - cd/src cp .env.example .env
+```
+```
+VITE_APP_API_URL=
+VITE_APP_URL=
+VITE_APP_TIMEZONE=
+VITE_APP_PORT=3000
+VITE_APP_LANGUAGE=
+VITE_APP_VERSION=local/development/production
 ```
 
-2. Build & up container
+4. Build & up container
 ```
 docker-compose -f docker-compose.development.yml up --build -d
 ```
 
-3. Run containers after start again
+5. Run containers after start again
 ```
 docker-compose -f docker-compose.development.yml start
 ```
-
