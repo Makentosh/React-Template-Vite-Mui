@@ -2,8 +2,6 @@ import PropTypes from 'prop-types';
 import dayjs from 'dayjs';
 import ruLocale from 'dayjs/locale/ru';
 import { Controller, useFormContext } from 'react-hook-form';
-// import { DatePicker, LocalizationProvider } from '@mui/lab';
-// import AdapterDateJs from '@mui/lab/AdapterDayjs';
 import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { TextField } from '@mui/material';

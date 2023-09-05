@@ -2,13 +2,15 @@ version: "3.7"
 
 services:
   node:
-    container_name: vite_react_template_base
-    tty: true
-    stdin_open: true
-    image: node:14.16.1-alpine
-    working_dir: /app
-    volumes:
-      - ./src:/app
+    container_name: vite_docker_node
+    image: node:alpine
+#    entrypoint: /bin/sh
     ports:
-      - "8090:3000"
+      - 8000:8000
+    working_dir: /srv/app
+    volumes:
+      - type: bind
+        source: ./src
+        target: /srv/app
+    tty: true
     command: sh -c "npm i && npm run dev"
