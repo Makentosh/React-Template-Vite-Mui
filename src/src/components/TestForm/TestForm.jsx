@@ -1,4 +1,6 @@
+import { Button } from '@mui/material';
 import { useForm } from 'react-hook-form';
+import { autocomplete_options, radioButtons, select_options } from '../../utils';
 import {
   FormColumn,
   FormContainer,
@@ -14,8 +16,6 @@ import {
   MuiSwitchField,
   MuiTextField,
 } from '../Form';
-import { Button } from '@mui/material';
-import { autocomplete_options, radioButtons, select_options } from '../../utils';
 
 export const TestForm = () => {
   const { ...methods } = useForm();

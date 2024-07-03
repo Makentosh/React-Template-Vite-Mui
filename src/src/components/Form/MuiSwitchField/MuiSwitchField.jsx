@@ -1,6 +1,6 @@
-import { Controller, useFormContext } from 'react-hook-form';
 import { FormControlLabel, FormHelperText, Switch } from '@mui/material';
 import PropTypes from 'prop-types';
+import { Controller, useFormContext } from 'react-hook-form';
 
 export const MuiSwitchField = ({ name, label, labelPlacement = 'end', rules, ...props }) => {
   const { control } = useFormContext();
