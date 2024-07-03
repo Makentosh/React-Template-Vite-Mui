@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { IconButton, InputAdornment, TextField } from '@mui/material';
-import { Controller, useFormContext } from 'react-hook-form';
 import { RemoveRedEyeOutlined, VisibilityOffOutlined } from '@mui/icons-material';
+import { IconButton, InputAdornment, TextField } from '@mui/material';
+import { useState } from 'react';
+import { Controller, useFormContext } from 'react-hook-form';
 import { defaultFieldsProps } from '../../../propTypes';
 
 export const MuiPasswordField = ({ name, label, placeholder, rules, ...props }) => {

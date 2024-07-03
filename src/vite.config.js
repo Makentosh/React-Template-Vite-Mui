@@ -1,47 +1,61 @@
-import { defineConfig, loadEnv } from 'vite';
+import { defineConfig, loadEnv, transformWithEsbuild } from 'vite';
 import react from '@vitejs/plugin-react';
 import svgr from 'vite-plugin-svgr';
-import fs from 'fs/promises';
 
-// const LOCAL = 'local';
+const APP_VERSION = {
+  docker: 'docker',
+  local: 'local',
+  production: 'production',
+  development: 'development'
+};
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
 
   return {
-    plugins: [svgr(), react()],
+    plugins: [svgr({
+
+      exportAsDefault: true
+    }),
+      {
+        name: 'treat-js-files-as-jsx',
+        async transform(code, id) {
+          if ( !id.match(/src\/.*\.js$/) ) return null;
+
+          // Use the exposed transform from vite, instead of directly
+          // transforming with esbuild
+          return transformWithEsbuild(code, id, {
+            loader: 'jsx',
+            jsx: 'automatic',
+          });
+        },
+      }, react()],
     esbuild: {
-      loader: 'jsx',
-      include: /src\/.*\.jsx?$/,
-      // loader: "tsx",
-      // include: /src\/.*\.[tj]sx?$/,
+      // jsxInject: `import React from 'react'`,
+      jsxFactory: 'h',
+      jsxFragment: 'Fragment',
       exclude: [],
     },
     optimizeDeps: {
+      force: true,
       esbuildOptions: {
-        plugins: [
-          {
-            name: 'load-js-files-as-jsx',
-            setup(build) {
-              build.onLoad({ filter: /src\/.*\.js$/ }, async (args) => ({
-                loader: 'jsx',
-                contents: await fs.readFile(args.path, 'utf8'),
-              }));
-            },
-          },
-        ],
+        loader: {
+          '.js': 'jsx',
+        },
       },
     },
     server: {
-      port: env.VITE_APP_PORT,
-      // open: env.VITE_APP_VERSION === LOCAL,
+      port: env.VITE_APP_VERSION === APP_VERSION.docker ? env.DOCKER_PORT : env.PORT,
+      host: env.VITE_APP_VERSION === APP_VERSION.docker ? true : env.HOST,
+      open: env.VITE_APP_VERSION === APP_VERSION.local,
       watch: {
         usePolling: true, //from hot reload in docker container
       },
-      build: {
-        chunkSizeWarningLimit: 5000,
-      },
+    },
+    build: {
+      outDir: 'build',
+      chunkSizeWarningLimit: 5000,
     },
   };
 });

@@ -52,4 +52,3 @@ docker-compose -f docker-compose.development.yml up --build -d
 ```
 docker-compose -f docker-compose.development.yml start
 ```
-Add sonarcloud

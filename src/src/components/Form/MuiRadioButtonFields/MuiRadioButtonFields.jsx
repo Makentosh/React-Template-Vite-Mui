@@ -1,6 +1,6 @@
+import { FormControl, FormControlLabel, FormHelperText, FormLabel, Radio, RadioGroup } from '@mui/material';
 import PropTypes from 'prop-types';
 import { Controller, useFormContext } from 'react-hook-form';
-import { FormControl, FormControlLabel, FormHelperText, FormLabel, Radio, RadioGroup } from '@mui/material';
 
 export const MuiRadioButtonFields = ({ name, labelPlacement, rules, buttons, groupLabel }) => {
   const { control } = useFormContext();

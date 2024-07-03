@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
 import { TextField } from '@mui/material';
+import PropTypes from 'prop-types';
 import { Controller, useFormContext } from 'react-hook-form';
 import { defaultFieldsProps } from '../../../propTypes';
 

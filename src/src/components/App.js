@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
 import { Box, Button, Card, CardContent, CardHeader, CssBaseline, Grid, Stack, Typography } from '@mui/material';
-import { TestForm } from './TestForm/TestForm';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-
-const getTodos = (page) => {
-  return new Promise((resolve, reject) => {
-    fetch(`https://jsonplaceholder.typicode.com/posts?_page=${page}_limit=20`)
-      .then((response) => response.json())
-      .then((json) => resolve(json))
-      .catch((error) => reject(error));
-  });
-};
+import React, { useState } from 'react';
+import { TestForm } from './TestForm/TestForm';
 
 const App = () => {
   const [page, setPage] = useState(1);
   // Access the client
   const queryClient = useQueryClient();
+
+  const getTodos = (page) => {
+    return new Promise((resolve, reject) => {
+      fetch(`https://jsonplaceholder.typicode.com/posts?_page=${page}_limit=20`)
+        .then((response) => response.json())
+        .then((json) => resolve(json))
+        .catch((error) => reject(error));
+    });
+  };
 
   // Queries
   const { data, isError, isLoading } = useQuery({
@@ -100,7 +100,7 @@ const App = () => {
               variant={'h4'}
               textAlign={'center'}
             >
-              Hello template vite + react + material ui + prettier + eslint
+              Hello template vite + react + material ui + biome
             </Typography>
             <Stack
               sx={{ mt: 2 }}
@@ -112,7 +112,7 @@ const App = () => {
               <Button
                 variant={'outlined'}
                 title={''}
-                onChange={() => {}}
+                onChange={() => null}
               >
                 Outlined
               </Button>
