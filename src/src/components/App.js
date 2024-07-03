@@ -17,8 +17,7 @@ const App = () => {
         .catch((error) => reject(error));
     });
   };
-
-
+  
   // Queries
   const { data, isError, isLoading } = useQuery({
     queryKey: ['todos', page],
