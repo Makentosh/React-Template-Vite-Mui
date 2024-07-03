@@ -1,5 +1,3 @@
 cd ./src
 
 yarn biome-format
-
-echo "file work"

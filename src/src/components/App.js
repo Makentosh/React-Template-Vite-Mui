@@ -3,7 +3,6 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import React, { useState } from 'react';
 import { TestForm } from './TestForm/TestForm';
 
-
 const App = () => {
   const [page, setPage] = useState(1);
   // Access the client
@@ -17,7 +16,7 @@ const App = () => {
         .catch((error) => reject(error));
     });
   };
-  
+
   // Queries
   const { data, isError, isLoading } = useQuery({
     queryKey: ['todos', page],
