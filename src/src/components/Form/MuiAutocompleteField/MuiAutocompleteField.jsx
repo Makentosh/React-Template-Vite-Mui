@@ -1,6 +1,6 @@
 import { Autocomplete, TextField } from '@mui/material';
-import { Controller, useFormContext } from 'react-hook-form';
 import PropTypes from 'prop-types';
+import { Controller, useFormContext } from 'react-hook-form';
 
 export const MuiAutocompleteField = ({ name, rules, label, placeholder, options, ...props }) => {
   const { control } = useFormContext();
@@ -20,7 +20,7 @@ export const MuiAutocompleteField = ({ name, rules, label, placeholder, options,
           getOptionLabel={(option) => option?.label ?? ''}
           isOptionEqualToValue={(option, value) => option === value}
           noOptionsText={'Ничего не найдено'}
-          onChange={(e, v) => onChange(v?.value)}
+          onChange={(_e, v) => onChange(v?.value)}
           value={(field?.value ? options?.find((x) => x?.value === field?.value) : field?.value) ?? null}
           renderInput={(params) => (
             <TextField

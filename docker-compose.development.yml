@@ -2,15 +2,15 @@ version: "3.7"
 
 services:
   node:
+    stdin_open: true
+    tty: true
     container_name: vite_docker_node
-    image: node:alpine
-#    entrypoint: /bin/sh
+    image: node:latest
     ports:
-      - 8000:8000
-    working_dir: /srv/app
+      - ${DEV_APP_PORT}:3000
+    working_dir: /app
     volumes:
       - type: bind
         source: ./src
-        target: /srv/app
-    tty: true
-    command: sh -c "npm i && npm run dev"
+        target: /app
+    command: sh -c "yarn install && yarn start"

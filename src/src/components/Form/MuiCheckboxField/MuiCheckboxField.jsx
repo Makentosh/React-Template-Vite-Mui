@@ -1,6 +1,6 @@
+import { Checkbox, FormControlLabel, FormHelperText } from '@mui/material';
 import PropTypes from 'prop-types';
 import { Controller, useFormContext } from 'react-hook-form';
-import { Checkbox, FormControlLabel, FormHelperText } from '@mui/material';
 import { labelPlacementProps } from '../../../propTypes';
 
 export const MuiCheckboxField = ({ labelPlacement, name, label, rules }) => {

@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { FormControl, FormHelperText, InputLabel, MenuItem, Select } from '@mui/material';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { defaultFieldsProps } from '../../../propTypes';
 

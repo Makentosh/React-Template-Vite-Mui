@@ -1,7 +1,7 @@
-import InputMask from 'react-input-mask';
-import PropTypes from 'prop-types';
 import { TextField } from '@mui/material';
+import PropTypes from 'prop-types';
 import { Controller, useFormContext } from 'react-hook-form';
+import InputMask from 'react-input-mask';
 import { normalizePhoneValue } from '../../../utils';
 
 export const MuiPhoneField = ({ rules, name, label, ...props }) => {
